@@ -1,0 +1,170 @@
+:root {
+  --bg-black: #050505;
+  --card-bg: #0d0d0d;
+  --border-dim: #1f1f1f;
+  --text-main: #ffffff;
+  --text-dim: #7a7a7a;
+  --accent-glow: rgba(255, 255, 255, 0.4);
+  
+  /* Status Colors */
+  --status-green: #00ff88;
+  --status-yellow: #ffcc00;
+  --status-red: #ff4444;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background-color: var(--bg-black);
+  color: var(--text-main);
+  font-family: 'Inter', sans-serif;
+  overflow-x: hidden;
+}
+
+/* --- Announcement & Header --- */
+.announcement {
+  background: #000;
+  border-bottom: 1px solid var(--border-dim);
+  text-align: center;
+  padding: 12px;
+  font-size: 11px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.announcement a { color: #fff; text-decoration: none; font-weight: 700; }
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 30px 8%;
+  border-bottom: 1px solid var(--border-dim);
+  background: rgba(0,0,0,0.8);
+  backdrop-filter: blur(15px);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.glow-text {
+  font-size: 24px;
+  font-weight: 900;
+  text-shadow: 0 0 15px var(--accent-glow);
+  letter-spacing: -1px;
+}
+
+.glow-text .thin { font-weight: 300; color: var(--text-dim); }
+
+.badge-glow {
+  border: 1px solid #fff;
+  padding: 2px 10px;
+  font-size: 10px;
+  border-radius: 4px;
+  box-shadow: 0 0 10px #fff;
+  margin-left: 15px;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+nav ul { display: flex; gap: 25px; list-style: none; padding: 0; }
+nav a { color: var(--text-dim); text-decoration: none; font-size: 13px; font-weight: 600; text-transform: uppercase; }
+nav a:hover, nav a.active { color: #fff; text-shadow: 0 0 8px #fff; }
+
+/* --- Legend & Title --- */
+.container { padding: 80px 8%; max-width: 1400px; margin: 0 auto; }
+
+.title-wrapper {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    margin-bottom: 50px;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.section-title { font-size: 52px; font-weight: 900; letter-spacing: -2px; margin: 0; }
+
+.status-legend {
+    display: flex;
+    gap: 20px;
+    background: #000;
+    padding: 10px 20px;
+    border-radius: 12px;
+    border: 1px solid var(--border-dim);
+}
+
+.legend-item {
+    display: flex;
+    align-items: center;
+    font-size: 12px;
+    text-transform: uppercase;
+    font-weight: 700;
+    color: var(--text-dim);
+    gap: 8px;
+}
+
+/* --- Status Dots --- */
+.status-dot, .dot {
+    display: inline-block;
+    border-radius: 50%;
+    animation: pulse 2s infinite;
+}
+
+.dot { width: 8px; height: 8px; }
+.status-dot { width: 12px; height: 12px; }
+
+.green { background-color: var(--status-green); color: var(--status-green); box-shadow: 0 0 10px var(--status-green); }
+.yellow { background-color: var(--status-yellow); color: var(--status-yellow); box-shadow: 0 0 10px var(--status-yellow); }
+.red { background-color: var(--status-red); color: var(--status-red); box-shadow: 0 0 10px var(--status-red); }
+
+@keyframes pulse {
+    0% { transform: scale(0.95); opacity: 0.7; }
+    50% { transform: scale(1.15); opacity: 1; box-shadow: 0 0 15px currentColor; }
+    100% { transform: scale(0.95); opacity: 0.7; }
+}
+
+/* --- Product Grid --- */
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 30px;
+}
+
+.product-card {
+  background: var(--card-bg);
+  border: 1px solid var(--border-dim);
+  border-radius: 20px;
+  overflow: hidden;
+  transition: 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.product-card:hover {
+  transform: translateY(-10px);
+  border-color: #fff;
+}
+
+.card-image-container { height: 190px; background: #000; overflow: hidden; }
+.script-image {
+  width: 100%; height: 100%; object-fit: cover;
+  filter: brightness(0.8);
+  transition: 0.5s ease;
+}
+
+.product-card:hover .script-image { filter: brightness(1.1); transform: scale(1.1); }
+
+.card-body { padding: 25px; }
+.card-body h2 { font-size: 22px; margin: 0 0 10px 0; }
+.card-body p { color: var(--text-dim); font-size: 14px; margin-bottom: 25px; min-height: 42px; }
+
+.price-row { display: flex; justify-content: space-between; align-items: center; }
+.price { font-weight: 900; font-size: 20px; }
+
+.btn-glow {
+  background: #fff; color: #000; border: none; padding: 12px 22px;
+  border-radius: 10px; font-weight: 800; font-size: 11px; text-transform: uppercase;
+  cursor: pointer; transition: 0.3s;
+}
+
+.btn-glow:hover { box-shadow: 0 0 20px #fff; transform: scale(1.05); }
