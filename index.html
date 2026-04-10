@@ -1,3 +1,86 @@
-<link rel="stylesheet" href="style.css">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Atlas Page</title>
 
-<h1>BLACK LOAF SUCK MY DICK I hope ur mom dies 🖕</h1> 
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap');
+
+body {
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: radial-gradient(circle at top, #0f172a, #000);
+    font-family: "Orbitron", sans-serif;
+    color: #00fff2;
+    overflow: hidden;
+}
+
+/* animated glow background */
+.glow {
+    position: absolute;
+    width: 500px;
+    height: 500px;
+    background: #00fff2;
+    filter: blur(180px);
+    opacity: 0.2;
+    animation: float 6s ease-in-out infinite;
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(-20px); }
+    50% { transform: translateY(20px); }
+}
+
+.container {
+    text-align: center;
+    z-index: 2;
+}
+
+h1 {
+    font-size: 3rem;
+    text-shadow: 0 0 20px #00fff2;
+    margin-bottom: 10px;
+}
+
+p {
+    color: #a5f3fc;
+    letter-spacing: 2px;
+}
+
+button {
+    margin-top: 20px;
+    padding: 12px 24px;
+    border: none;
+    background: #00fff2;
+    color: #000;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 8px;
+    transition: 0.3s;
+    box-shadow: 0 0 20px #00fff2;
+}
+
+button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 35px #00fff2;
+}
+</style>
+</head>
+
+<body>
+
+<div class="glow"></div>
+
+<div class="container">
+    <h1>BLACK LOAF SUCK MY DICK I hope ur mom dies 🖕</h1>
+    <p>Neon Interface Online</p>
+    <button onclick="alert('Hello World!')">Enter</button>
+</div>
+
+</body>
+</html>
